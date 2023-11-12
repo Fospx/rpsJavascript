@@ -7,7 +7,27 @@ function getComputerChoice()
     return compChoice;
 }
 
-console.log(getComputerChoice());
+function playRound(playerSelection, computerSelection)
+{
+    if (playerSelection == computerSelection)
+    {
+        return "It's a Tie";
+    }
+    else if ((playerSelection == 'rock' && computerSelection == 'paper') ||
+    (playerSelection == 'paper' && computerSelection == 'rock') ||
+    (playerSelection == 'scissor' && computerSelection == 'paper'))
+    {
+        return "You Win!"
+    }
+    else
+    {
+        return "You Lost " + computerSelection + " beats " + playerSelection;
+    }
+}
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
 
 
 
