@@ -2,11 +2,13 @@
 
 function getComputerChoice()
 {
-    rpsArray = ['rock', 'paper', 'scissor'];
-    compChoice = (rpsArray[(Math.floor(Math.random() * rpsArray.length))])
+    const rpsArray = ['rock', 'paper', 'scissor'];
+    const compChoice = (rpsArray[(Math.floor(Math.random() * rpsArray.length))])
     return compChoice;
 }
-
+// playround var
+let playerWins = 0;
+let compWins = 0;
 function playRound(playerSelection, computerSelection)
 {
     if (playerSelection == computerSelection)
@@ -17,18 +19,55 @@ function playRound(playerSelection, computerSelection)
     (playerSelection == 'paper' && computerSelection == 'rock') ||
     (playerSelection == 'scissor' && computerSelection == 'paper'))
     {
-        return "You Win!"
+        playerWins += 1;
+        return "you won";
+
     }
     else
     {
+        compWins += 1;
         return "You Lost " + computerSelection + " beats " + playerSelection;
     }
 }
+// game var
+const matchAmmount = [0,1,2,3,4]
+const game = () => {
+    for (let i = 0; i < matchAmmount.length; i++)
+    {
+        const playerSelection = prompt().toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log("Computer chose: " + computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+    }
+    console.log("you won " + playerWins + " time/s");
+    console.log(whoWon(playerWins, compWins));
+    
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log("Computer chose: " + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+}
+
+const whoWon = (player, computer) => {
+    if (player > computer)
+    {
+        return "The Player Won";
+    }
+    else
+    {
+        return "The Computer Won";
+    }
+}
+
+game();
+
+// var x = 10;
+// const doSomething = () => {
+//     console.log(x);
+// }
+
+// const playerSelection = prompt().toLowerCase();
+// const computerSelection = getComputerChoice();
+// console.log("Computer chose: " + computerSelection);
+// console.log(playRound(playerSelection, computerSelection));
+
 
 
 
