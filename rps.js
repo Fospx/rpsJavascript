@@ -44,7 +44,7 @@ const game = () => {
     
 
 }
-
+// checks to see who won
 const whoWon = (player, computer) => {
     if (player > computer)
     {
@@ -55,18 +55,10 @@ const whoWon = (player, computer) => {
         return "The Computer Won";
     }
 }
-
+// starts the game
 game();
 
-// var x = 10;
-// const doSomething = () => {
-//     console.log(x);
-// }
-
-// const playerSelection = prompt().toLowerCase();
-// const computerSelection = getComputerChoice();
-// console.log("Computer chose: " + computerSelection);
-// console.log(playRound(playerSelection, computerSelection));
+f
 
 
 
