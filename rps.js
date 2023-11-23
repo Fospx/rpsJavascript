@@ -58,7 +58,6 @@ const whoWon = (player, computer) => {
 // starts the game
 game();
 
-f
 
 
 
